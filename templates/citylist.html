@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title id = "title"></title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+  <meta name = "referrer" content="never"> <!--访问豆瓣海报图片所需参数-->
+  <!-- Favicons -->
+  <link href="../static/assets/img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../static/assets/vendor/icofont/icofont.min.css" rel="stylesheet" type="text/css">
+  <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" type="text/css">
+  <link href="../static/assets/vendor/animate.css/animate.min.css" rel="stylesheet" type="text/css">
+  <link href="../static/assets/vendor/venobox/venobox.css" rel="stylesheet" type="text/css">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet" type="text/css">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Mamba - v2.0.1
+  * Template URL: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+   <style>
+     table tr{
+       display: flex;
+         text-align: center;
+     }
+     table tr td{
+       padding-bottom: 15px;
+       padding-top: 15px;
+       text-align: center;
+     }
+
+    .title{
+      flex: 2;
+      text-align: center;
+    }
+    .eName{
+      flex: 2;
+      text-align: center;
+    }
+    .director{
+      flex: 1;
+      text-align: center;
+    }
+    .actors{
+      flex: 1;
+      text-align: center;
+    }
+    .findinfo{
+      flex: 5;
+      text-align: center;
+    }
+    .movieinfo{
+      flex: 16;
+      text-align: center;
+    }
+    .image{
+      text-align: center;
+      flex: 2;
+    }
+
+    .times{
+      text-align: center;
+      flex: 1;
+    }
+
+    .pic{
+        width: 120px;
+        height: 160px;
+    }
+
+    .region{
+      text-align: center;
+      flex: 2;
+    }
+
+    /* 分页的css */
+    .pagination{
+      width: 100%;
+      margin: 0 auto;
+      margin-top: 30px;
+      margin-left: 100px;
+      text-align: center;
+    }
+    button:not(.download_button){
+      width: 55px;
+      height: 50px;
+      font-size: 13px;
+      font-family: 微软雅黑;
+      margin: 5px;
+      text-align: center;
+        border-radius: 10px;
+        border-width: 0px;
+         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,10%);
+    }
+
+    .download_button{
+      padding:20px;
+      font-size: 13px;
+      font-family: 微软雅黑;
+      margin: 5px;
+      text-align: center;
+        border-radius: 10px;
+        border-width: 0px;
+         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 0px 5px 0 rgba(0,0,0,10%);
+    }
+
+     .download_button:hover{
+      padding:20px;
+      font-size: 13px;
+      font-family: 微软雅黑;
+      margin: 5px;
+      text-align: center;
+        border-radius: 10px;
+        border-width: 0px;
+         background-color: #6aa3d5;
+         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,10%);
+    }
+
+     .download_button:active{
+      padding:20px;
+      font-size: 13px;
+      font-family: 微软雅黑;
+      margin: 5px;
+      text-align: center;
+        border-radius: 10px;
+        border-width: 0px;
+         background-color: silver;
+         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,10%);
+    }
+
+    button:hover:not(.download_button:hover){
+      width: 55px;
+      height: 50px;
+      font-size: 13px;
+      font-family: 微软雅黑;
+      margin: 5px;
+      text-align: center;
+        border-radius: 10px;
+        border-width: 0px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,10%);
+        background-color: #6aa3d5;
+    }
+
+    button:active:not(.download_button:active){
+        width: 55px;
+      height: 50px;
+      font-size: 13px;
+      font-family: 微软雅黑;
+      margin: 5px;
+      text-align: center;
+        border-radius: 10px;
+        border-width: 0px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,50%);
+        background-color: silver;
+    }
+
+    .download_list{
+        list-style-type: none;
+        text-align: right;
+        padding-right: 15px;
+    }
+
+   </style>
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="/first"><span>ＣＡＴＣＨ</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="../static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li><a href="/first">首页</a></li>
+          <li class="active"><a href="/separate">电影</a></li>
+          <li><a href="/score">评分</a></li>
+          <li><a href="/word">词云</a></li>
+          <li><a href="/team">团队</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Our Team Section ======= -->
+  <section id="team" class="team">
+    <div class="container">
+      <div class="section-title">
+          <h2><p id = "name"></p>正在热映</h2>
+      </div>
+      <!-- ======= Counts Section ======= -->
+      <section class="counts section-bg">
+        <ul class="download_list">
+            <li>
+                <button class = "download_button" onclick="download()">下载EXCEL</button>
+            </li>
+        </ul>
+        <div class="container">
+          <table class="table table-striped">
+              <tr>
+                  <td class="image">影片海报</td>
+                  <td class="title">影片名称</td>
+                  <td class="director">导演</td>
+                  <td class="actors">演员</td>
+                  <td class="times">电影时长</td>
+                  <td class="region">上映地区</td>
+              </tr>
+            {% for movie in citymovies %}
+              <tr>
+                  <td class = "image">
+                       <img class="pic" src= {{ movie[1] }}>
+                  </td>
+                  <td class="title">
+                      <a href="{{ movie[1] }}" target="_blank">{{ movie[2] }}</a>
+                  </td>
+                  <td class="director">{{ movie[3] }}</td>
+                  <td class="actors">{{ movie[4] }}</td>
+                  <td class="times">{{ movie[5] }}</td>
+              <td class="region">{{ movie[6] }}</td>
+
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </section><!-- End Counts Section -->
+    </div>
+  </section><!-- End Our Team Section -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        @sakula <strong><span>F*35#213</span></strong>Welcome
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/ -->
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="../static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="../static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="../static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="../static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/assets/js/main.js"></script>
+  <script>
+    var str = location.href;
+    var start = str.indexOf("=") + 1;
+    var end = str.length;
+    cityname = decodeURI(str.substring(start, end));
+    document.getElementById("name").innerHTML = cityname;
+    document.getElementById("title").innerText = cityname + "正在热映";
+  </script>
+   <script>
+       function download(){
+           window.open("/citylist.xls")
+       }
+   </script>
+</body>
+
+</html>

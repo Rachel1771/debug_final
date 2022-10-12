@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    .search{
+        position: relative;
+        top:50px;
+        border-radius: 10px;
+        padding: 15px;
+        width: 50%;
+        height: 50px;
+        text-align: left;
+        font-size: 20px;
+        border-width: 1px;
+    }
+
+    .submit{
+        position: relative;
+        top:70px;
+        border-radius: 10px;
+        border-width: 0;
+        height: 50px;
+        width: 150px;
+        font-family: 微软雅黑;
+        color: black;
+        background-color:#b8daff;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 5px 0 rgba(0,0,0,0);
+    }
+
+    .submit:hover{
+        background-color: silver;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,10%);
+    }
+
+            body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: relative;
+            text-align: center;
+            top:100px;
+            width: 52%;
+            left: 24%;
+            height: 300px;
+            margin: 0;
+            padding: 0;
+            border-radius: 20px;
+            {#box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,10%);#}
+        }
+
+
+        .demo-title {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            z-index: 1;
+        }
+
+        h1 {
+            margin: 0;
+            color: black;
+            font-size: 30px;
+        }
+
+        #title{
+            font-size: 32px;
+        }
+
+        #p{
+            color: slategrey;
+        }
+
+        h3 {
+            font-weight: normal;
+            margin-top: 5px;
+            color: #8E939D;
+        }
+
+</style>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>城市院线信息 </title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="static/assets/vendor/icofont/icofont.min.css" rel="stylesheet" type="text/css">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" type="text/css">
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet" type="text/css">
+  <link href="static/assets/vendor/venobox/venobox.css" rel="stylesheet" type="text/css">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet" type="text/css">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet" type="text/css">
+
+  <!-- =======================================================
+  * Template Name: Mamba - v2.0.1
+  * Template URL: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="/first"><span>ＣＡＴＣＨ</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li><a href="/first">首页</a></li>
+          <li class="active"><a href="/separate">电影</a></li>
+          <li><a href="/score">评分</a></li>
+          <li><a href="/word">词云</a></li>
+          <li><a href="/team">团队</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Our Team Section ======= -->
+  <section id="team" class="team">
+                            <div class="section-title" >
+                    <h2 id = "title" style="position: relative;">输入城市拼音以查询院线</h2>
+                    <p id = "p" style="position: relative;">找到你想看的</p>
+                </div>
+            <div class="container" style="padding-bottom: 170px;background-color: aliceblue;position: relative;">
+                <div data-aos="fade-up">
+                    <div>
+                        <form name = "subform" method="post" action="/cities">
+                              <input class = "search" type="text" name="cityname" placeholder="请输入城市名称（支持汉字和完整拼音）"><br>
+                            <input class="submit" name="submit" type="submit" onclick="open_details()">
+                        </form>
+                    </div>
+                    <div id="map">
+                    </div>
+                </div>
+            </div>
+                      <p style="font-size: 20px;z-index: 1;flood-color: black; position: relative;top:-50px" data-aos="fade-up">（院线热力柱图）</p>
+        </div>
+  </section><!-- End Our Team Section -->
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        @sakula <strong><span>F*35#213</span></strong>Welcome
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/ -->
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+  <script>
+      function getCityName(){
+          window.location.href = "citylist";
+      }
+
+        window.movingDraw = true;
+    </script>
+    <script
+        src="https://webapi.amap.com/maps?v=2.0&key=baae10ac6ad8448f91db1d420e9afb32&plugin=AMap.Scale,AMap.ToolBar"></script>
+    <script type="text/javascript"
+        src="https://webapi.amap.com/loca?v=2.0.0&key=baae10ac6ad8448f91db1d420e9afb32"></script>
+
+    {#高德API接口#}
+    <script>
+      var map = new AMap.Map('map', {
+          zoom: 5,
+          showLabel: false,
+          viewMode: '3D',
+          pitch: 55,
+          center: [103.594884,36.964587],
+          mapStyle: 'amap://styles/9d89a78e93bd0ee7506030fa35b9de47',
+      });
+
+      var loca = new Loca.Container({
+          map,
+      });
+
+      loca.ambLight = {
+          intensity: 0.7,
+          color: '#7b7bff',
+      };
+      loca.dirLight = {
+          intensity: 0.8,
+          color: '#fff',
+          target: [0, 0, 0],
+          position: [0, -1, 1],
+      };
+      loca.pointLight = {
+          color: 'rgb(240,88,25)',
+          position: [112.028276, 31.58538, 2000000],
+          intensity: 3,
+          // 距离表示从光源到光照强度为 0 的位置，0 就是光不会消失。
+          distance: 5000000,
+      };
+
+      var pl = new Loca.PrismLayer({
+          zIndex: 10,
+          opacity: 1,
+          visible: false,
+          hasSide: true,
+      });
+
+      var geo = new Loca.GeoJSONSource({
+          url: './static/assets/json/citiesData.json',
+      });
+      pl.setSource(geo);
+      // top3 的城市增加文字
+      var topConf = {
+
+      };
+      pl.setStyle({
+          unit: 'meter',
+          sideNumber: 32,
+          topColor: (index, f) => {
+              var n = f.properties['Yuanxian'];
+              return n > 10 ? '#E97091' : '#2852F1';
+          },
+          sideTopColor: (index, f) => {
+              var n = f.properties['Yuanxian'];
+              return n > 10 ? '#E97091' : '#2852F1';
+          },
+          sideBottomColor: '#002bb9',
+          radius: 15000,
+          height: (index, f) => {
+              var props = f.properties;
+              var height = Math.max(100, Math.sqrt(props['Yuanxian']) * 100000 - 350000);
+              var conf = topConf[props['地址']];
+              // top3 的数据，增加文字表达
+              if (conf) {
+                  map.add(
+                      new AMap.Marker({
+                          anchor: 'bottom-center',
+                          position: [f.coordinates[0], f.coordinates[1], height],
+                          content: '<div style="margin-bottom: 10px; float: left; font-size: 14px;height: 57px; width: 180px; color:#fff; background: no-repeat url(' +
+                              conf +
+                              '); background-size: 100%;"><p style="margin: 7px 0 0 35px; height: 20px; line-height:20px;">' +
+                              props['地址'] + '院线 ' + props['Yuanxian'] + '</p>' +
+                              '<p style="margin: 4px 0 0 35px; height: 20px; line-height:20px; color: #00a9ff; font-size: 13px;">' +
+                              props['Yuanxian'] + ' 个' +
+                              '</p></div>',
+                      }),
+                  );
+              }
+              return height;
+              // return 60000 + n * 100;
+          },
+          // rotation: 360 * 100,
+          altitude: 0,
+      });
+      loca.add(pl);
+      map.on('complete', function () {
+          setTimeout(function () {
+              pl.show(500);
+              pl.addAnimate({
+                  key: 'height',
+                  value: [0, 1],
+                  duration: 500,
+                  easing: 'Linear',
+                  transform: 500,
+                  random: true,
+                  delay: 5000,
+              });
+          }, 800);
+      });
+      loca.animate.start();
+
+
+      // 点击事件处理
+      var clickInfo = new AMap.Marker({
+          anchor: 'bottom-center',
+          position: [116.396923, 39.918203, 0],
+      });
+      clickInfo.setMap(map);
+      clickInfo.hide();
+      // 动画测试
+      map.on('click', function (e) {
+          var feat = pl.queryFeature(e.pixel.toArray());
+          if (feat) {
+              clickInfo.show();
+              var props = feat.properties;
+              var height = Math.max(100, Math.sqrt(props['Yuanxian']) * 50000 - 350000);
+              clickInfo.setPosition([feat.coordinates[0], feat.coordinates[1], height]);
+              clickInfo.setContent(
+                  '<div style="text-align: center; height: 20px; width: 150px; color:black; font-size: 14px;">' +
+                  feat.properties['地址'] + ': ' + feat.properties['Yuanxian'] + '个' +
+                  ' </div>'
+              );
+          } else {
+              clickInfo.hide();
+          }
+      });
+
+
+    </script>
+
+    <script>
+        function open_details(){
+            if(document.forms["subform"]["cityname"].value == '')
+                alert("请输入内容！")
+            else
+                window.open("/citylist?cityname=" + document.forms["subform"]["cityname"].value);
+        }
+    </script>
+
+</body>
+
+</html>
